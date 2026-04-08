@@ -23,7 +23,7 @@ const dataPlans: DataPlan[] = [
     data: "6GB",
     validity: "7 jours",
     price: "1.000 FCFA",
-    paymentUrl: "https://data-place.mymaketou.store/fr/products/forfait-6giga/checkout"
+    paymentUrl: "https://donate.fapshi.com/37899105"
   },
   {
     id: "2",
@@ -31,7 +31,7 @@ const dataPlans: DataPlan[] = [
     data: "10GB",
     validity: "7 jours",
     price: "1.500 FCFA",
-    paymentUrl: "https://data-place.mymaketou.store/fr/products/forfait-6giga-0/checkout",
+    paymentUrl: "https://donate.fapshi.com/63273985",
     popular: true
   },
   {
@@ -40,7 +40,7 @@ const dataPlans: DataPlan[] = [
     data: "35GB",
     validity: "10 jours",
     price: "2.500 FCFA",
-    paymentUrl: "https://data-place.mymaketou.store/fr/products/forfait-6giga-0-7/checkout"
+    paymentUrl: "https://donate.fapshi.com/82638155"
   },
   {
     id: "4",
@@ -48,7 +48,7 @@ const dataPlans: DataPlan[] = [
     data: "50GB",
     validity: "14 jours",
     price: "3.500 FCFA",
-    paymentUrl: "https://data-place.mymaketou.store/fr/products/forfait-6giga-0-7-2/checkout"
+    paymentUrl: "https://donate.fapshi.com/51089772"
   },
   {
     id: "5",
@@ -56,7 +56,7 @@ const dataPlans: DataPlan[] = [
     data: "Illimité",
     validity: "30 jours",
     price: "5.000 FCFA",
-    paymentUrl: "https://data-place.mymaketou.store/fr/products/forfait-6giga-0-7-2-2/checkout"
+    paymentUrl: "https://donate.fapshi.com/62602428"
   }
 ];
 
@@ -166,19 +166,18 @@ const Index = () => {
         {/* Forfaits Data avec glassmorphism */}
         <div className="space-y-4">
           <h3 className="text-lg font-semibold text-gray-900 mb-4 animate-fade-in">Nos forfaits</h3>
-          
+
           {dataPlans.map((plan, index) => (
-            <Card 
-              key={plan.id} 
-              className={`relative overflow-hidden transition-all duration-500 hover:shadow-2xl cursor-pointer backdrop-blur-md bg-white/40 border-white/30 hover:bg-white/50 hover:scale-105 group ${
-                plan.popular ? 'ring-2 ring-blue-400/50 shadow-blue-100' : ''
-              } ${animatedCards.includes(index) ? 'animate-scale-in' : 'opacity-0'}`}
+            <Card
+              key={plan.id}
+              className={`relative overflow-hidden transition-all duration-500 hover:shadow-2xl cursor-pointer backdrop-blur-md bg-white/40 border-white/30 hover:bg-white/50 hover:scale-105 group ${plan.popular ? 'ring-2 ring-blue-400/50 shadow-blue-100' : ''
+                } ${animatedCards.includes(index) ? 'animate-scale-in' : 'opacity-0'}`}
               style={{ animationDelay: `${index * 150}ms` }}
               onClick={() => handleSelectPlan(plan)}
             >
               {/* Gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-r from-yellow-500/5 to-yellow-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              
+
               {plan.popular && (
                 <div className="absolute top-3 right-3 z-10">
                   <Badge className="bg-gradient-to-r from-yellow-500 to-yellow-600 text-white text-xs px-3 py-1 animate-pulse shadow-lg">
@@ -186,7 +185,7 @@ const Index = () => {
                   </Badge>
                 </div>
               )}
-              
+
               <CardContent className="p-6 relative z-10">
                 <div className="flex items-center justify-between mb-4">
                   <div>
@@ -207,8 +206,8 @@ const Index = () => {
                     </div>
                   </div>
                 </div>
-                
-                <Button 
+
+                <Button
                   className="w-full bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-black transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl group-hover:animate-pulse"
                   onClick={(e) => {
                     e.stopPropagation();
